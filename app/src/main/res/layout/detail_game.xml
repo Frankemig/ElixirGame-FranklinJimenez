@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     tools:context="com.example.elixirgamefranklinjimenez.view.DetailFragment">
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -15,7 +14,7 @@
         app:layout_constraintGuide_end="220dp" />
 
     <ImageButton
-        android:id="@+id/det_zoom_img"
+        android:id="@+id/imageDetailZoom"
         android:layout_width="521dp"
         android:layout_height="832dp"
         android:layout_marginBottom="8dp"
@@ -39,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/det_title"
+        android:id="@+id/tvNameDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -87,6 +86,10 @@
                 app:layout_constraintEnd_toEndOf="@+id/view5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/view5" />
+            <ImageView
+                tools:srcCompat="@tools:sample/avatars"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
 
 
@@ -101,12 +104,12 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/det_manacost"
+                android:id="@+id/calificacion"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:background="@color/cardview_shadow_start_color"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="Mana Cost"
+                android:text="Calificación"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="@+id/view6"
@@ -114,7 +117,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/det_manacost_text"
+                android:id="@+id/tv_rating_detail"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
@@ -124,31 +127,30 @@
                 android:text="TextView"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/det_type"
+                app:layout_constraintBottom_toTopOf="@+id/price"
                 app:layout_constraintEnd_toEndOf="@+id/view6"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/view5"
-                app:layout_constraintTop_toBottomOf="@+id/det_manacost"
+                app:layout_constraintTop_toBottomOf="@+id/calificacion"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/det_type"
+                android:id="@+id/price"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="45dp"
                 android:background="@color/cardview_shadow_start_color"
-
                 android:gravity="center_horizontal|center_vertical"
-                android:text="Type"
+                android:text="Precio Actual"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="@+id/view6"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/view5"
-                app:layout_constraintTop_toBottomOf="@+id/det_manacost" />
+                app:layout_constraintTop_toBottomOf="@+id/calificacion" />
 
             <TextView
-                android:id="@+id/det_type_text"
+                android:id="@+id/tv_price"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
@@ -158,28 +160,27 @@
                 android:text="TextView"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/det_rarity"
+                app:layout_constraintBottom_toTopOf="@+id/oldPrice"
                 app:layout_constraintEnd_toEndOf="@+id/view6"
                 app:layout_constraintStart_toEndOf="@+id/view5"
-                app:layout_constraintTop_toBottomOf="@+id/det_type" />
+                app:layout_constraintTop_toBottomOf="@+id/price" />
 
             <TextView
-                android:id="@+id/det_rarity"
+                android:id="@+id/oldPrice"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="45dp"
-
                 android:background="@color/cardview_shadow_start_color"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="Rarity"
+                android:text="Precio Anterior"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="@+id/view6"
                 app:layout_constraintStart_toEndOf="@+id/view5"
-                app:layout_constraintTop_toBottomOf="@+id/det_type" />
+                app:layout_constraintTop_toBottomOf="@+id/price" />
 
             <TextView
-                android:id="@+id/det_rarity_text"
+                android:id="@+id/tv_lastPrice"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
@@ -192,7 +193,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/view6"
                 app:layout_constraintStart_toEndOf="@+id/view5"
-                app:layout_constraintTop_toBottomOf="@+id/det_rarity" />
+                app:layout_constraintTop_toBottomOf="@+id/oldPrice" />
 
             <View
                 android:id="@+id/view7"
@@ -321,15 +322,15 @@
     </HorizontalScrollView>
 
     <Button
-        android:id="@+id/det_fav_button"
-        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@drawable/ic_email"
+        android:id="@+id/compartir"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/design_default_color_on_primary"
+        android:backgroundTint="@color/white"
         android:elevation="10dp"
-        android:shadowColor="@color/design_default_color_on_secondary"
+        android:shadowColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent" />
 
