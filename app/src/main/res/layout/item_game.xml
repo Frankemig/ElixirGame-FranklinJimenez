@@ -85,6 +85,34 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/rating"
             app:layout_constraintStart_toEndOf="@+id/rating" />
 
+        <TextView
+            android:id="@+id/fuerza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="7dp"
+            android:background="#BFFFFFFF"
+            android:text="Metacrítico"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_fuerza"
+            app:layout_constraintEnd_toEndOf="@+id/imageList" />
+
+        <TextView
+            android:id="@+id/tv_fuerza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginEnd="9dp"
+            android:background="#BFFFFFFF"
+            android:gravity="center"
+            android:text="99"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageList"
+            app:layout_constraintEnd_toEndOf="@+id/fuerza"
+            app:layout_constraintStart_toStartOf="@+id/fuerza" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

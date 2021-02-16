@@ -21,6 +21,8 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.GameVH>() {
             binding.tvName.text = game.name
             binding.tvReleased.text = game.released
             binding.tvRating.text = game.rating.toString()
+            binding.tvFuerza.text = game.metacritic.toString()
+
             Picasso.get().load(game.background_image)
                 .resize(200,120)
                 .placeholder(R.drawable.ic_idea_comodin)

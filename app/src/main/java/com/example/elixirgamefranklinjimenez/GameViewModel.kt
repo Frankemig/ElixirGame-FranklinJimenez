@@ -47,13 +47,16 @@ class GameViewModel : ViewModel() {
 
                 true -> detail.value = response.body()
                 false -> Log.d("GameViewModel", "error en el detalle ${response.code()}")
+
             }
         }
 
     }
 
-    fun setSelected(book: Game) {
-        selected = book
+    fun setSelected(game: Game) {
+        selected = game
+        Log.d("ViewModel", game.toString())
+
     }
 
     fun getSelected() = selected
