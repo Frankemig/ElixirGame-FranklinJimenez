@@ -2,6 +2,9 @@ package com.example.elixirgamefranklinjimenez
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
+import com.example.elixirgamefranklinjimenez.databinding.ActivityMainBinding
+
 /**
  * [x] Control de versiones
 
@@ -49,8 +52,14 @@ import android.os.Bundle
  *      [ ] cliente
  */
 class MainActivity : AppCompatActivity() {
+    val gameVM : GameViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        gameVM.getGames()
+
     }
 }
