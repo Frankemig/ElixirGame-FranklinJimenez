@@ -59,5 +59,4 @@ class GameViewModel : ViewModel() {
 
     }
 
-    fun getSelected() = selected
 }
