@@ -38,7 +38,7 @@ class GameViewModel : ViewModel() {
 
 
 
-    fun getGame(id: Int) {
+    fun getGame(id: Int){
 
         viewModelScope.launch {
             val response = RetrofitClient.retrofitInstance().getGame(id)
