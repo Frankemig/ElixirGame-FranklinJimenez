@@ -36,8 +36,6 @@ class GameViewModel : ViewModel() {
 
     fun getGame(): LiveData<GameDetails> = detail
 
-
-
     fun getGame(id: Int){
 
         viewModelScope.launch {
@@ -47,10 +45,8 @@ class GameViewModel : ViewModel() {
 
                 true -> detail.value = response.body()
                 false -> Log.d("GameViewModel", "error en el detalle ${response.code()}")
-
             }
         }
-
     }
 
     fun setSelected(game: Game) {

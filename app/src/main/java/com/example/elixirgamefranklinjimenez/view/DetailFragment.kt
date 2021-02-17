@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.elixirgamefranklinjimenez.GameAdapter
 import com.example.elixirgamefranklinjimenez.GameViewModel
 import com.example.elixirgamefranklinjimenez.R
 import com.example.elixirgamefranklinjimenez.databinding.DetailGameBinding
@@ -39,7 +40,7 @@ class DetailFragment : Fragment() {
             val addresses = arrayOfNulls<String>(1)
 
             addresses[0] = "ventas@elixirgames.cl"
-            composeEmail(addresses, "Consulta" )
+            composeEmail(addresses, "Consulta por el juego " + "'" + GameAdapter.selectedItem.value?.name + "'" + " id " + "'" + GameAdapter.selectedItem.value?.id + "'")
         }
         return binding.root
     }
@@ -49,8 +50,7 @@ class DetailFragment : Fragment() {
             data = Uri.parse("mailto:") // only email apps should handle this
             putExtra(Intent.EXTRA_EMAIL, addresses)
             putExtra(Intent.EXTRA_SUBJECT, subject)
-            putExtra(Intent.EXTRA_TEXT, "Hola,\n" +
-                    "Vi el juego 'x' de código 'y' y me gustaría que me contactaran a este correo o al número:_________.\n\n" +
+            putExtra(Intent.EXTRA_TEXT, "Hola,\nVi el juego " + "'" + GameAdapter.selectedItem.value?.name + "'" + " de código " + "'" +GameAdapter.selectedItem.value?.id + "'" + "y me gustaría que me contactaran a este correo o al número:_________.\n\n" +
                     "Quedo Atento(a).")
         }
         startActivity(intent)
