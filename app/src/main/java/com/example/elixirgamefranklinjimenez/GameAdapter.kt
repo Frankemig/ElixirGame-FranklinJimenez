@@ -10,9 +10,9 @@ import com.example.elixirgamefranklinjimenez.remoto.Game
 import com.squareup.picasso.Picasso
 
 class GameAdapter : RecyclerView.Adapter<GameAdapter.GameVH>() {
-companion object {
+
      val selectedItem = MutableLiveData<Game>()
-}
+
     fun selectedItem(): LiveData<Game> = selectedItem
     private var gameList = listOf<Game>()
 

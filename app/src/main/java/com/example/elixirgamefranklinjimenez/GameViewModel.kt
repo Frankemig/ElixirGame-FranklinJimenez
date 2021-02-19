@@ -54,5 +54,6 @@ class GameViewModel : ViewModel() {
         Log.d("ViewModel", game.toString())
 
     }
+    fun getSelected() = selected
 
 }

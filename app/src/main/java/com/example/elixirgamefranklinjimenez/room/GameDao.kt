@@ -12,5 +12,6 @@ interface GameDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertGames(gameEntityList: List<GameEntity>)
 
-
+@Query("SELECT * FROM game_table")
+fun getAllGames():LiveData<List<GameEntity>>
 }
