@@ -3,14 +3,12 @@ package com.example.elixirgamefranklinjimenez.view
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.elixirgamefranklinjimenez.GameAdapter
 import com.example.elixirgamefranklinjimenez.GameViewModel
 import com.example.elixirgamefranklinjimenez.R
 import com.example.elixirgamefranklinjimenez.databinding.DetailGameBinding
@@ -44,18 +42,22 @@ class DetailFragment : Fragment() {
          binding.tvPlataforma.text = it.platforms
          binding.tvRatingDetail.text = it.released
 
-         when(it.delivery == true){
-
-             true -> Toast.makeText(context, "Si Tiene Delivery", Toast.LENGTH_LONG).show()
-             false -> Toast.makeText(context, "No Tiene Delivery", Toast.LENGTH_LONG).show()
-         }
-
          Picasso.get().load(it.background_image)
              .placeholder(R.drawable.ic_idea_comodin)
              .into(binding.imageDetailZoom)
 
+         when(it.delivery == true){
+
+             true -> /*Picasso.get().load(it.deliverySi)
+                 .into(binding.imageDelivery)*/
+                 Toast.makeText(context, "Si Tiene Delivery", Toast.LENGTH_LONG).show()
+             false -> /*Picasso.get().load(it.DeliveryNo)
+                 .into(binding.imageDelivery)*/
+                 Toast.makeText(context, "No Tiene Delivery", Toast.LENGTH_LONG).show()
+         }
+
      })
-        binding.btCarrito.setOnClickListener{
+        binding.btPedidos.setOnClickListener{
             val addresses = arrayOfNulls<String>(1)
 
             addresses[0] = "ventas@elixirgames.cl"
@@ -74,4 +76,9 @@ class DetailFragment : Fragment() {
         }
         startActivity(intent)
     }
+/*    fun link(url: String?) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
+    }*/
 }
