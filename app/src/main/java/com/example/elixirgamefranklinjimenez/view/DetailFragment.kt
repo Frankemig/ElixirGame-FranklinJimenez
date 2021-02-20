@@ -46,14 +46,13 @@ class DetailFragment : Fragment() {
              .placeholder(R.drawable.ic_idea_comodin)
              .into(binding.imageDetailZoom)
 
-         when(it.delivery == true){
+         if (it.delivery == true){
+             binding.imageDelivery.setImageResource(R.drawable.feliz)
+             Toast.makeText(context, "Si Tiene Delivery", Toast.LENGTH_LONG).show()
 
-             true -> /*Picasso.get().load(it.deliverySi)
-                 .into(binding.imageDelivery)*/
-                 Toast.makeText(context, "Si Tiene Delivery", Toast.LENGTH_LONG).show()
-             false -> /*Picasso.get().load(it.DeliveryNo)
-                 .into(binding.imageDelivery)*/
-                 Toast.makeText(context, "No Tiene Delivery", Toast.LENGTH_LONG).show()
+         }else{
+             binding.imageDelivery.setImageResource(R.drawable.triste)
+             Toast.makeText(context, "No Tiene Delivery", Toast.LENGTH_LONG).show()
          }
 
      })
