@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C4215CF3">
+        android:background="#000">
 
         <ImageView
             android:id="@+id/imageList"
